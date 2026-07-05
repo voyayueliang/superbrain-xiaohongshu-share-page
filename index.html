@@ -4,941 +4,716 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no,email=no,address=no" />
-  <title>10 后用 AI，回应真实世界｜WAIC 2026 超脑青少年 AI 特别展</title>
-  <meta name="description" content="WAIC 2026 超脑青少年 AI 特别展公开分享页：近 50 个青少年 AI 项目，围绕真实问题、作品展示与小红书传播合作展开。" />
-  <meta property="og:title" content="10 后用 AI，回应真实世界" />
-  <meta property="og:description" content="WAIC 2026 超脑青少年 AI 特别展：看见青少年如何用 AI 回应真实世界。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/youth-ai-showcase-hero.jpg" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e83b46'/%3E%3Cpath d='M18 35c8-17 20-17 28 0M19 44h26M25 24l7-7 7 7' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <title>超脑 × 小红书青少年 AI 活动｜前期梳理</title>
+  <meta name="description" content="超脑 × 小红书青少年 AI 活动前期梳理：项目定位、关键共识、待确认问题与下一步行动。" />
   <style>
-    :root {
-      --ink: #17191f;
-      --muted: #626773;
-      --soft: #f7f8f5;
-      --paper: #ffffff;
-      --line: rgba(23, 25, 31, 0.1);
-      --red: #e83b46;
-      --red-deep: #b91e2c;
-      --green: #0f766e;
-      --cyan: #dff6f2;
-      --yellow: #ffe28a;
-      --shadow: 0 18px 45px rgba(21, 25, 32, 0.12);
-      --max: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--soft);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
-      line-height: 1.68;
-      letter-spacing: 0;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .hero {
-      min-height: 82svh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      color: #fff;
-      overflow: hidden;
-      background-image:
-        linear-gradient(90deg, rgba(12, 14, 18, 0.88) 0%, rgba(12, 14, 18, 0.72) 34%, rgba(12, 14, 18, 0.18) 68%, rgba(12, 14, 18, 0.1) 100%),
-        url("assets/youth-ai-showcase-hero.jpg");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 34%;
-      background: linear-gradient(180deg, rgba(12, 14, 18, 0), rgba(12, 14, 18, 0.78));
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      padding: 44px 0 56px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 18px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--yellow);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 3px;
-      background: var(--red);
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 780px;
-      font-size: 64px;
-      line-height: 1.06;
-      font-weight: 850;
-      letter-spacing: 0;
-    }
-
-    .hero-copy {
-      max-width: 690px;
-      margin: 20px 0 0;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 20px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 6px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      background: rgba(255, 255, 255, 0.13);
-      color: rgba(255, 255, 255, 0.92);
-      font-size: 14px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .topbar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      z-index: 30;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(12, 14, 18, 0.58);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    .topbar-inner {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      min-height: 58px;
-      color: #fff;
-    }
-
-    .brand {
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .nav::-webkit-scrollbar {
-      display: none;
-    }
-
-    .nav a {
-      padding: 9px 10px;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .nav a:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    main {
-      background: var(--soft);
-    }
-
-    .band {
-      padding: 76px 0;
-      border-bottom: 1px solid var(--line);
-      background: var(--paper);
-    }
-
-    .band.alt {
-      background: linear-gradient(180deg, #f7f8f5 0%, #eef8f5 100%);
-    }
-
-    .band.dark {
-      background: #15181f;
-      color: #fff;
-    }
-
-    .inner {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 44px;
-      align-items: start;
-      margin-bottom: 32px;
-    }
-
-    .kicker {
-      margin: 0 0 10px;
-      color: var(--red-deep);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .band.dark .kicker {
-      color: var(--yellow);
-    }
-
-    h2 {
-      margin: 0;
-      font-size: 38px;
-      line-height: 1.18;
-      letter-spacing: 0;
-    }
-
-    .section-head p {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .band.dark .section-head p,
-    .band.dark .muted {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .lead {
-      max-width: 880px;
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.5;
-      font-weight: 720;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .metric {
-      min-height: 148px;
-      padding: 24px;
-      border-right: 1px solid var(--line);
-    }
-
-    .metric:last-child {
-      border-right: 0;
-    }
-
-    .metric b {
-      display: block;
-      color: var(--red-deep);
-      font-size: 38px;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 24px;
-      min-height: 100%;
-    }
-
-    .card.dark-card {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.14);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      line-height: 1.25;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .dark-card p {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .label {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 16px;
-      padding: 4px 8px;
-      background: var(--cyan);
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .red-label {
-      background: #ffe9eb;
-      color: var(--red-deep);
-    }
-
-    .feature {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .feature-copy {
-      padding: 34px;
-    }
-
-    .feature-copy h3 {
-      margin: 0 0 14px;
-      font-size: 28px;
-      line-height: 1.22;
-    }
-
-    .feature-copy p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .feature-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .feature-visual {
-      min-height: 360px;
-      background-image:
-        linear-gradient(180deg, rgba(232, 59, 70, 0.08), rgba(15, 118, 110, 0.06)),
-        url("assets/youth-ai-showcase-hero.jpg");
-      background-size: cover;
-      background-position: right center;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      border: 1px solid rgba(255, 255, 255, 0.16);
-    }
-
-    .step {
-      padding: 22px 16px;
-      border-right: 1px solid rgba(255, 255, 255, 0.16);
-      min-height: 170px;
-    }
-
-    .step:last-child {
-      border-right: 0;
-    }
-
-    .step b {
-      display: block;
-      color: var(--yellow);
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    .step span {
-      display: block;
-      font-size: 16px;
-      line-height: 1.45;
-    }
-
-    .note {
-      margin-top: 22px;
-      padding: 18px 20px;
-      border-left: 4px solid var(--red);
-      background: rgba(232, 59, 70, 0.08);
-      color: #4d2025;
-      font-size: 15px;
-    }
-
-    .band.dark .note {
-      border-left-color: var(--yellow);
-      background: rgba(255, 226, 138, 0.1);
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .list-row {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 20px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .list-row:last-child {
-      border-bottom: 0;
-    }
-
-    .list-row b {
-      color: var(--red-deep);
-    }
-
-    .list-row span {
-      color: var(--muted);
-    }
-
-    .cta {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-      padding: 34px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .cta h2 {
-      font-size: 32px;
-    }
-
-    .cta p {
-      margin: 10px 0 0;
-      color: var(--muted);
-    }
-
-    .actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .button {
-      appearance: none;
-      min-height: 44px;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
-      padding: 10px 16px;
-      font: inherit;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    .button.primary {
-      border-color: var(--red);
-      background: var(--red);
-      color: #fff;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(21, 25, 32, 0.12);
-    }
-
-    footer {
-      padding: 28px 0 42px;
-      background: #15181f;
-      color: rgba(255, 255, 255, 0.62);
-      font-size: 14px;
-    }
-
-    .footer-inner {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-      display: flex;
-      gap: 18px;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 980px) {
-      h1 {
-        font-size: 52px;
-      }
-
-      .section-head,
-      .feature,
-      .cta {
-        grid-template-columns: 1fr;
-      }
-
-      .metrics,
-      .grid.three {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .steps {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .step:nth-child(3) {
-        border-right: 0;
-      }
-
-      .step:nth-child(-n + 3) {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-      }
-
-      .actions {
-        justify-content: flex-start;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .topbar {
-        position: absolute;
-      }
-
-      .topbar-inner,
-      .hero-inner,
-      .inner,
-      .footer-inner {
-        width: min(var(--max), calc(100% - 28px));
-      }
-
-      .topbar-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 12px 0;
-        min-height: 0;
-      }
-
-      .nav {
-        width: 100%;
-      }
-
-      .hero {
-        min-height: 78svh;
-        background-position: 63% center;
-      }
-
-      .hero-inner {
-        padding: 124px 0 36px;
-      }
-
-      h1 {
-        font-size: 38px;
-      }
-
-      .hero-copy {
-        font-size: 17px;
-      }
-
-      .band {
-        padding: 52px 0;
-      }
-
-      h2 {
-        font-size: 30px;
-      }
-
-      .lead {
-        font-size: 20px;
-      }
-
-      .metrics,
-      .grid.two,
-      .grid.three,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .metric {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .metric:last-child {
-        border-bottom: 0;
-      }
-
-      .step {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-        min-height: auto;
-      }
-
-      .step:last-child {
-        border-bottom: 0;
-      }
-
-      .feature-copy,
-      .cta {
-        padding: 24px;
-      }
-
-      .feature-visual {
-        min-height: 260px;
-      }
-
-      .list-row {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-
-    @media print {
-      .topbar,
-      .actions {
-        display: none;
-      }
-
-      .hero {
-        min-height: auto;
-        color: #111;
-        background: #fff;
-      }
-
-      .hero-inner {
-        padding: 24px 0;
-      }
-
-      .band,
-      footer {
-        padding: 24px 0;
-        background: #fff;
-        color: #111;
-      }
-
-      .card,
-      .cta,
-      .feature,
-      .metrics {
-        break-inside: avoid;
-        box-shadow: none;
-      }
+    :root{
+      --bg:#f5f1ea;
+      --bg2:#f9f7f3;
+      --paper:rgba(255,255,255,0.78);
+      --paper-strong:rgba(255,255,255,0.92);
+      --text:#202223;
+      --muted:#6a6d72;
+      --line:rgba(75,69,64,0.10);
+      --accent:#7d4d36;
+      --accent2:#2d6559;
+      --accent3:#c59264;
+      --shadow:0 18px 60px rgba(59,39,25,0.08);
+      --radius:28px;
+      --radius-s:18px;
+      --max:980px;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
+      line-height:1.78;
+      letter-spacing:.01em;
+      background:
+        radial-gradient(900px 400px at 0% 0%, rgba(197,146,100,.22), transparent 55%),
+        radial-gradient(800px 360px at 100% 8%, rgba(45,101,89,.16), transparent 50%),
+        linear-gradient(180deg,#f8f5ef 0%, #f3eee6 100%);
+      min-height:100vh;
+    }
+
+    a{text-decoration:none;color:var(--accent2);}
+    img{max-width:100%;display:block;}
+    .wrap{width:min(var(--max), calc(100% - 24px)); margin:0 auto; padding:18px 0 42px;}
+    .glass{
+      background:var(--paper);
+      border:1px solid rgba(255,255,255,.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow:var(--shadow);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:36px;
+      padding:28px 18px 18px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.96), rgba(250,244,236,.90) 55%, rgba(239,248,245,.86)),
+        linear-gradient(120deg, rgba(125,77,54,.08), rgba(45,101,89,.08));
+      border:1px solid rgba(255,255,255,.55);
+      box-shadow:0 24px 80px rgba(72,43,24,.10);
+    }
+    .hero:before,
+    .hero:after{
+      content:"";
+      position:absolute;
+      border-radius:999px;
+      filter:blur(6px);
+      pointer-events:none;
+    }
+    .hero:before{
+      width:240px;height:240px;
+      right:-70px; top:-90px;
+      background:radial-gradient(circle at 40% 40%, rgba(45,101,89,.18), rgba(45,101,89,0));
+    }
+    .hero:after{
+      width:220px;height:220px;
+      left:-70px; bottom:-100px;
+      background:radial-gradient(circle at 60% 60%, rgba(197,146,100,.22), rgba(197,146,100,0));
+    }
+
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(125,77,54,.12);
+      color:var(--accent2);
+      font-size:13px; font-weight:700;
+      position:relative; z-index:1;
+    }
+    .badge-dot{
+      width:7px;height:7px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent3),var(--accent2));
+      box-shadow:0 0 0 4px rgba(45,101,89,.08);
+    }
+    h1{
+      margin:18px 0 10px;
+      font-size:clamp(30px, 7vw, 54px);
+      line-height:1.08;
+      letter-spacing:-.045em;
+      position:relative; z-index:1;
+    }
+    .hero-sub{
+      margin:0;
+      max-width:760px;
+      color:#4f5256;
+      font-size:16px;
+      position:relative; z-index:1;
+    }
+    .hero-meta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:18px;
+      position:relative; z-index:1;
+    }
+    .chip{
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.75);
+      border:1px solid rgba(75,69,64,.08);
+      color:#58534d;
+      font-size:13px;
+    }
+    .hero-note{
+      margin-top:16px;
+      padding:14px 14px 14px 16px;
+      border-radius:18px;
+      border:1px solid rgba(45,101,89,.12);
+      background:linear-gradient(135deg, rgba(45,101,89,.08), rgba(255,255,255,.42));
+      color:#3b5c54;
+      font-size:14px;
+      position:relative; z-index:1;
+    }
+
+    .quick{
+      margin-top:14px;
+      border-radius:24px;
+      padding:14px;
+    }
+    .quick-title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; margin-bottom:10px;
+    }
+    .quick-title h3{
+      margin:0; font-size:15px; color:var(--accent);
+      letter-spacing:.01em;
+    }
+    .toc{
+      display:grid; gap:10px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+    .toc a{
+      display:block;
+      padding:12px 12px;
+      border-radius:16px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(75,69,64,.08);
+      color:#3a3e41;
+      font-size:14px;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .toc a:active{transform:scale(.98);}
+    .toc a small{display:block;color:#8a8278;font-size:11px;margin-top:4px;}
+
+    section{
+      margin-top:16px;
+      border-radius:30px;
+      padding:20px 16px;
+      background:var(--paper-strong);
+      border:1px solid rgba(255,255,255,.45);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    section:before{
+      content:"";
+      position:absolute;
+      inset:auto -40px -60px auto;
+      width:160px; height:160px; border-radius:50%;
+      background:radial-gradient(circle, rgba(125,77,54,.08), rgba(125,77,54,0));
+      pointer-events:none;
+    }
+    .section-top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
+      margin-bottom:12px;
+      position:relative; z-index:1;
+    }
+    .section-kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; font-weight:700; color:var(--accent2);
+      text-transform:uppercase; letter-spacing:.08em;
+    }
+    .section-kicker .num{
+      display:inline-grid; place-items:center;
+      width:24px;height:24px;border-radius:999px;
+      background:linear-gradient(135deg, rgba(125,77,54,.12), rgba(45,101,89,.12));
+      border:1px solid rgba(75,69,64,.08);
+      color:var(--accent);
+      font-size:12px;
+    }
+    h2{
+      margin:8px 0 0;
+      font-size:24px;
+      line-height:1.2;
+      letter-spacing:-.03em;
+    }
+    p{margin:8px 0;}
+    .lead{
+      font-size:17px;
+      color:#35383a;
+    }
+
+    .hero-cards,
+    .grid-2,
+    .grid-3{
+      display:grid;
+      gap:12px;
+    }
+    .hero-cards{grid-template-columns:repeat(3, minmax(0,1fr)); margin-top:16px;}
+    .grid-2{grid-template-columns:repeat(2, minmax(0,1fr));}
+    .grid-3{grid-template-columns:repeat(3, minmax(0,1fr));}
+
+    .card{
+      position:relative;
+      border-radius:22px;
+      padding:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(250,246,240,.92));
+      border:1px solid rgba(75,69,64,.08);
+      box-shadow:0 8px 28px rgba(60,40,24,.05);
+    }
+    .card .icon{
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      font-size:17px;
+      background:linear-gradient(135deg, rgba(197,146,100,.18), rgba(45,101,89,.12));
+      margin-bottom:10px;
+    }
+    .card h4{
+      margin:0 0 6px;
+      font-size:16px;
+      color:#2b2f31;
+    }
+    .card p{margin:0;color:#5b5b5f;font-size:14px;line-height:1.7;}
+
+    .highlight{
+      margin:14px 0;
+      padding:16px;
+      border-radius:22px;
+      background:linear-gradient(135deg, rgba(125,77,54,.08), rgba(45,101,89,.06), rgba(255,255,255,.48));
+      border:1px solid rgba(125,77,54,.12);
+    }
+    .highlight strong{color:var(--accent);}
+
+    .list{
+      display:grid; gap:10px; margin-top:12px;
+    }
+    .list-item{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px 13px;
+      border-radius:18px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(75,69,64,.08);
+    }
+    .list-index{
+      flex:0 0 auto;
+      width:28px;height:28px;border-radius:10px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(125,77,54,.13), rgba(45,101,89,.10));
+      color:var(--accent);
+      font-weight:700; font-size:13px;
+    }
+    .list-item p{margin:0; font-size:14px; color:#54565a;}
+
+    .table-wrap{
+      margin-top:12px;
+      overflow:auto;
+      border-radius:20px;
+      border:1px solid rgba(75,69,64,.08);
+      background:rgba(255,255,255,.7);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:700px;
+      font-size:14px;
+    }
+    th,td{
+      padding:14px 14px;
+      text-align:left;
+      vertical-align:top;
+      border-bottom:1px solid rgba(75,69,64,.08);
+    }
+    th{
+      position:sticky; top:0;
+      background:#efe6d9;
+      color:#4e4037;
+      font-weight:700;
+    }
+    tr:last-child td{border-bottom:none;}
+
+    .question-grid{
+      display:grid; gap:10px;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      margin-top:12px;
+    }
+    .question{
+      padding:14px;
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(249,245,238,.88));
+      border:1px solid rgba(75,69,64,.08);
+    }
+    .question b{display:block; margin-bottom:4px; color:var(--accent2); font-size:14px;}
+    .question span{font-size:14px; color:#57595d;}
+
+    .footer{
+      margin-top:20px;
+      text-align:center;
+      color:#7c7d80;
+      font-size:13px;
+      padding:14px 0 8px;
+    }
+
+    .floatbar{
+      position:sticky;
+      bottom:10px;
+      z-index:20;
+      display:flex;
+      justify-content:center;
+      pointer-events:none;
+      margin-top:14px;
+      padding-bottom:env(safe-area-inset-bottom);
+    }
+    .floatbar-inner{
+      pointer-events:auto;
+      display:flex;
+      gap:10px;
+      padding:8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.68);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 10px 28px rgba(53,36,22,.10);
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border:none;
+      border-radius:999px;
+      background:#fff;
+      color:#383a3d;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, #2d6559, #3d7b6d);
+      color:#fff;
+    }
+
+    @media (max-width: 860px){
+      .toc{grid-template-columns:repeat(2, minmax(0,1fr));}
+      .hero-cards,.grid-3{grid-template-columns:1fr 1fr;}
+      .question-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width: 640px){
+      .wrap{width:min(var(--max), calc(100% - 16px)); padding:12px 0 30px;}
+      .hero{padding:22px 14px 14px;border-radius:28px;}
+      section{padding:18px 14px;border-radius:24px;}
+      .toc{grid-template-columns:1fr;}
+      .hero-cards,.grid-2,.grid-3{grid-template-columns:1fr;}
+      h2{font-size:22px;}
+      .floatbar{justify-content:stretch;}
+      .floatbar-inner{width:100%; border-radius:18px;}
+      .btn{flex:1;}
+    }
+
+    @media print{
+      body{background:#fff;}
+      .wrap{width:100%; padding:0;}
+      .hero, .quick, section{box-shadow:none; background:#fff;}
+      .floatbar{display:none;}
+      .toc a{break-inside:avoid;}
     }
   </style>
 </head>
 <body>
-  <header class="topbar" aria-label="页面导航">
-    <div class="topbar-inner">
-      <a class="brand" href="#">超脑 × 小红书</a>
-      <nav class="nav" aria-label="快速导航">
-        <a href="#overview">概览</a>
-        <a href="#works">作品</a>
-        <a href="#xhs">传播机制</a>
-        <a href="#story">内容主线</a>
-        <a href="#release">发布</a>
-        <a href="#next">后续</a>
+  <div class="wrap">
+    <header class="hero">
+      <div class="badge"><span class="badge-dot"></span> 微信分享版 · 项目同步页</div>
+      <h1>超脑 × 小红书青少年 AI 活动<br>前期梳理</h1>
+      <p class="hero-sub">这不是最终方案，而是一份用于团队共识对齐的前置信息整理。目的是先把项目定位、关键判断、待确认问题和下一步行动讲清楚，方便后续 owner / 团队更快推进。</p>
+      <div class="hero-meta">
+        <span class="chip">整理人：月亮 × 小雨</span>
+        <span class="chip">项目状态：待确认</span>
+        <span class="chip">方向：青少年 AI 创造者</span>
+        <span class="chip">场景：品牌传播 + 内容共创</span>
+      </div>
+      <div class="hero-note">
+        建议转发时附一句：这版是基于前期讨论整理的同步页，不是拍板方案，欢迎大家直接补充、修正和认领行动项。
+      </div>
+
+      <div class="hero-cards">
+        <div class="card">
+          <div class="icon">🎯</div>
+          <h4>核心目标</h4>
+          <p>让超脑的学生项目、AI 教育实践与青少年创造力被更多人看见。</p>
+        </div>
+        <div class="card">
+          <div class="icon">📱</div>
+          <h4>传播场景</h4>
+          <p>用小红书做内容扩散，因此视觉、现场和机制都要服务传播。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧩</div>
+          <h4>当前阶段</h4>
+          <p>先对齐条件与边界，再进入完整方案设计，而不是一开始就重写策划。</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="quick glass">
+      <div class="quick-title">
+        <h3>快速阅读</h3>
+      </div>
+      <nav class="toc" aria-label="目录">
+        <a href="#s1">01 核心结论<small>先看整体判断</small></a>
+        <a href="#s2">02 已知信息<small>时间、预算、规模等</small></a>
+        <a href="#s3">03 项目定位<small>到底要做成什么</small></a>
+        <a href="#s4">04 小红书机制<small>如何把传播嵌入活动</small></a>
+        <a href="#s5">05 设计原则<small>做轻，但要好看</small></a>
+        <a href="#s6">06 招募筛选<small>谁来、怎么来</small></a>
+        <a href="#s7">07 场地运营<small>风险点与执行关键</small></a>
+        <a href="#s8">08 团队分工<small>谁适合做什么</small></a>
+        <a href="#s9">09 待确认问题<small>最需要尽快拍板的点</small></a>
+        <a href="#s10">10 下一步行动<small>接下来怎么推进</small></a>
       </nav>
     </div>
-  </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">WAIC 2026 青少年 AI 特别展</p>
-      <h1>10 后用 AI，回应真实世界</h1>
-      <p class="hero-copy">在上海 WAIC 现场，看见来自不同城市的青少年如何把 AI 用在真实问题里：帮助具体的人，观察具体的生活，也创造新的表达方式。</p>
-      <div class="hero-meta" aria-label="关键信息">
-        <span class="tag">2026 年 7 月 17-20 日</span>
-        <span class="tag">上海</span>
-        <span class="tag">近 50 个青少年 AI 项目</span>
-        <span class="tag">作品展示与传播合作</span>
+    <section id="s1">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">01</span>Summary</div>
+          <h2>核心结论</h2>
+        </div>
+      </div>
+      <div class="highlight">
+        <p class="lead"><strong>这次活动不一定要做得特别重，但一定要做得清楚、好看、可传播、能落地。</strong></p>
+        <p>它可以用黑客松作为形式，但真正要完成的是：让超脑的学生项目、青少年 AI 创造力、AI for Good 的理念，以及超脑这套教育实践被更多人看见。</p>
+      </div>
+      <p>因此，下一步不建议立刻进入完整方案撰写，而是先把目标、时间、规模、预算、owner、团队、小红书资源和招募机制对齐。只要这些条件清楚，方案会自然长出来。</p>
+    </section>
+
+    <section id="s2">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">02</span>Known Facts</div>
+          <h2>已知信息</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>模块</th><th>当前判断</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>城市</td><td>上海优先。小红书、学校和合作机构资源更集中，落地更方便。</td></tr>
+            <tr><td>住宿</td><td>原则上不包住宿。未成年人住宿管理风险高，过去也踩过坑。</td></tr>
+            <tr><td>时间</td><td>倾向 8 月中下旬，最好选周末，方便家长接送。具体日期需倒排。</td></tr>
+            <tr><td>时长</td><td>建议 1–2 天。若希望学生真正完成作品，两天白天更合理；不建议 24 小时通宵。</td></tr>
+            <tr><td>规模</td><td>口径尚未统一：30–40 人、50–100 人都被提过，需要尽快确认。</td></tr>
+            <tr><td>预算</td><td>初步听到 Michael 侧预算约 10–20 万，需进一步确认使用范围。</td></tr>
+            <tr><td>小红书</td><td>大概率不会深度介入策划，也不出钱；但可支持话题、推流、曝光和奖品/周边。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s3">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">03</span>Positioning</div>
+          <h2>项目定位</h2>
+        </div>
+      </div>
+      <div class="highlight">
+        <p><strong>更适合定位为：</strong>青少年 AI 创造者展示 + 超脑品牌传播 + 小红书内容共创的 MVP。</p>
+      </div>
+      <p>它不是一个特别重的教育产品，而是一场带有教育色彩的大型品牌传播活动。原因是当前更核心的目标是品牌影响力、内容沉淀和对外呈现，而不是完整训练营式的教学交付。</p>
+
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card">
+          <div class="icon">🌱</div>
+          <h4>对超脑</h4>
+          <p>扩大品牌影响力，展示学生项目与教育理念，沉淀一套外部可理解的叙事。</p>
+        </div>
+        <div class="card">
+          <div class="icon">✨</div>
+          <h4>对学生</h4>
+          <p>获得展示舞台、项目反馈、传播机会和参与体验，而不仅仅是“比赛”。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🪄</div>
+          <h4>对小红书</h4>
+          <p>形成青少年 AI 创造者相关的优质内容、话题和笔记扩散。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🚀</div>
+          <h4>对后续</h4>
+          <p>为真正的青少年 AI 创新节积累案例、内容资产和合作势能。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s4">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">04</span>Xiaohongshu</div>
+          <h2>小红书传播机制</h2>
+        </div>
+      </div>
+      <p>小红书合作不应只放在活动结束后做传播，而应嵌入活动流程本身。</p>
+      <div class="list">
+        <div class="list-item">
+          <div class="list-index">1</div>
+          <p><strong>设置专属奖项：</strong>例如「小红书人气奖」「青少年创造者影响力奖」。</p>
+        </div>
+        <div class="list-item">
+          <div class="list-index">2</div>
+          <p><strong>统一话题 tag：</strong>鼓励学生、家长、参与者在活动期间发笔记。</p>
+        </div>
+        <div class="list-item">
+          <div class="list-index">3</div>
+          <p><strong>设置统计节点：</strong>以点赞、收藏、评论等数据作为传播奖项依据。</p>
+        </div>
+        <div class="list-item">
+          <div class="list-index">4</div>
+          <p><strong>让平台协助推流：</strong>并尽量争取奖品、周边、账号联动等支持。</p>
+        </div>
+      </div>
+      <p>这样可以把平台传播需求变成活动体验的一部分，而不是后期临时催发帖。</p>
+    </section>
+
+    <section id="s5">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">05</span>Principles</div>
+          <h2>活动设计原则</h2>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="icon">🎨</div>
+          <h4>现场好看</h4>
+          <p>小红书是视觉平台，设计、物料、展陈、打卡点、封面图都要服务传播。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🏟️</div>
+          <h4>规模有震撼感</h4>
+          <p>不一定靠人数堆，可以靠空间、舞台、展区与视觉系统制造“重要感”。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛠️</div>
+          <h4>产出质量高</h4>
+          <p>建议使用推荐和筛选机制，优先邀请已有半成品或完成度高的项目。</p>
+        </div>
+        <div class="card">
+          <div class="icon">💛</div>
+          <h4>参与者体验好</h4>
+          <p>流程、餐饮、安保、兑奖、家长接送等都要提前设计清楚。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">06</span>Recruitment</div>
+          <h2>招募与筛选</h2>
+        </div>
+      </div>
+      <p>不建议完全开放从零开始招募。更合理的方式是：推荐机制 + 前置筛选 + 现有项目池转化。</p>
+
+      <div class="grid-3" style="margin-top:12px;">
+        <div class="card">
+          <div class="icon">🏕️</div>
+          <h4>超脑暑期营学生</h4>
+          <p>已有半成品项目，更适合继续完善和展示，也更能讲出超脑自己的故事。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h4>WAIC 项目池</h4>
+          <p>已经过一轮筛选，可直接二次联系和转化，招募效率更高。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h4>合作机构推荐</h4>
+          <p>由学校、社群、机构直接选送学生，更容易保证项目质量与合作方声量。</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <p><strong>仍需确认：</strong>是否限定 AI for Good；是否允许软件、硬件、AIGC 影像、艺术、电影、文创、社会创新方案等不同作品类型；以及不同类型如何公平评审。</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">07</span>Operations</div>
+          <h2>场地与运营风险</h2>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="icon">📶</div>
+          <h4>基础设施</h4>
+          <p>大屏、稳定 Wi‑Fi、充足电源、空调、桌椅，这些越齐全越能降低执行压力。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h4>现场支持</h4>
+          <p>安保、清洁、搬桌椅、人员进出管理都很关键，特别是面对未成年人。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🍱</div>
+          <h4>餐饮风险</h4>
+          <p>建议参考成熟供应商，或使用肯德基、麦当劳、披萨等标准化方案。</p>
+        </div>
+        <div class="card">
+          <div class="icon">👨‍👩‍👧</div>
+          <h4>家长与安全</h4>
+          <p>签到签退、家长接送、中途离场、紧急联系人机制都需要前置设计。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s8">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">08</span>Team</div>
+          <h2>团队分工初步建议</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>角色</th><th>建议承担内容</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>月亮</td><td>前期信息梳理、项目定位、传播叙事、生态合作、WAIC 项目池转化、对接 Michael / Maomao / Mindy。</td></tr>
+            <tr><td>小雨</td><td>活动机制、流程设计、风险拆解、运营经验支持。</td></tr>
+            <tr><td>Michael</td><td>目标、预算、资源、人脉、外部品牌合作、小红书关键对接。</td></tr>
+            <tr><td>Maomao</td><td>营地学生转化、内部老师协调、学生项目推荐。</td></tr>
+            <tr><td>Mindy</td><td>场地、供应商、合同、财务、餐饮、现场执行支持。</td></tr>
+            <tr><td>新媒体 / 设计</td><td>视觉系统、小红书传播机制、内容物料。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>需要注意：8 月中旬前，超脑核心团队可能都在忙营地，不要默认他们能投入前期工作。8 月中旬后若有人加入，更适合承担现场执行和补位。</p>
+    </section>
+
+    <section id="s9">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">09</span>Questions</div>
+          <h2>待确认问题</h2>
+        </div>
+      </div>
+      <div class="question-grid">
+        <div class="question"><b>定位</b><span>这是普通黑客松、showcase，还是青少年 AI 创新节 MVP？</span></div>
+        <div class="question"><b>目标优先级</b><span>品牌影响力、招生转化、内容传播、教育体验、合作资源，哪个优先？</span></div>
+        <div class="question"><b>时间</b><span>最终是 8 月中旬还是下旬？是否必须周末？</span></div>
+        <div class="question"><b>规模</b><span>30–40 人、50 人，还是 100 人？家长是否可以观摩？</span></div>
+        <div class="question"><b>预算</b><span>10–20 万是否确认？分别覆盖哪些内容？</span></div>
+        <div class="question"><b>小红书资源</b><span>是否能确认话题、推流、奖品、账号联动和站内资源？</span></div>
+        <div class="question"><b>团队角色</b><span>最终 owner 是谁？各角色分别投入到什么程度？</span></div>
+        <div class="question"><b>招募方式</b><span>是否优先转化超脑营地学生和 WAIC 项目池？是否开放外部报名？</span></div>
+        <div class="question"><b>评审机制</b><span>是否分年龄组 / 分赛道？小红书传播奖是否单独设置？</span></div>
+        <div class="question"><b>作品类型</b><span>是否只限软件，还是允许硬件、AIGC 影像、艺术、电影、文创等？</span></div>
+      </div>
+    </section>
+
+    <section id="s10">
+      <div class="section-top">
+        <div>
+          <div class="section-kicker"><span class="num">10</span>Actions</div>
+          <h2>下一步行动</h2>
+        </div>
+      </div>
+      <div class="list">
+        <div class="list-item"><div class="list-index">1</div><p><strong>整理给 Michael 的决策清单：</strong>明确项目定位、资源需求、待确认问题和分工边界。</p></div>
+        <div class="list-item"><div class="list-index">2</div><p><strong>与 Michael 对齐：</strong>确认目标、预算、资源、人脉和外部合作方向。</p></div>
+        <div class="list-item"><div class="list-index">3</div><p><strong>与小红书再约短会：</strong>确认话题、推流、奖品、账号联动和规则红线。</p></div>
+        <div class="list-item"><div class="list-index">4</div><p><strong>拉出倒排时间线：</strong>根据招募周期、场地、owner 到位时间倒排最晚决策时间。</p></div>
+        <div class="list-item"><div class="list-index">5</div><p><strong>盘点 WAIC 项目池：</strong>筛选可转化到本次活动的学生和项目。</p></div>
+        <div class="list-item"><div class="list-index">6</div><p><strong>对接 Maomao：</strong>推动营地学生前置转化，提前植入活动信息。</p></div>
+        <div class="list-item"><div class="list-index">7</div><p><strong>对接 Mindy：</strong>确认场地、供应商、合同、财务、餐饮等执行支持范围。</p></div>
+        <div class="list-item"><div class="list-index">8</div><p><strong>盘点潜在合作品牌：</strong>教育科技、AI 工具、亲子消费、营地、户外、社会创新等方向。</p></div>
+        <div class="list-item"><div class="list-index">9</div><p><strong>确认设计资源：</strong>小红书传播强依赖视觉，设计预算和设计人才需要前置。</p></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      基于前期讨论整理 · 用于团队同步与共识对齐
+    </div>
+
+    <div class="floatbar">
+      <div class="floatbar-inner">
+        <a class="btn" href="#s1">回到顶部</a>
+        <button class="btn primary" onclick="window.print()">打印 / 存 PDF</button>
       </div>
     </div>
-  </section>
-
-  <main>
-    <section class="band" id="overview">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Overview</p>
-            <h2>这是一场关于青少年 AI 创造力的公开展示</h2>
-          </div>
-          <p>超脑将在 WAIC 2026 呈现青少年 AI 创新板块，现场包括青少年 AI 特别展、青少年会客厅与线上特别展。小红书传播合作将围绕作品故事、话题聚合与站内内容扩散展开。</p>
-        </div>
-        <p class="lead">这不是把青少年放进成人竞赛模板里，而是让他们带着真实问题、真实作品和真实表达出现。</p>
-      </div>
-    </section>
-
-    <section class="band alt">
-      <div class="inner">
-        <div class="metrics" aria-label="活动数据">
-          <div class="metric">
-            <b>12</b>
-            <span>项目来源城市</span>
-          </div>
-          <div class="metric">
-            <b>50</b>
-            <span>近 50 个参展项目</span>
-          </div>
-          <div class="metric">
-            <b>14</b>
-            <span>参展者平均年龄约 14 岁</span>
-          </div>
-          <div class="metric">
-            <b>10</b>
-            <span>最小创作者约 10 岁</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="works">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Works</p>
-            <h2>我们关注的不是“更像大人”，而是“真的在回应谁”</h2>
-          </div>
-          <p>一个好项目不只看技术复杂度，也看它是否从真实处境出发，是否能被使用、被理解、被继续改进。</p>
-        </div>
-
-        <div class="grid three">
-          <article class="card">
-            <span class="label red-label">真实问题</span>
-            <h3>从身边的人开始</h3>
-            <p>项目可以来自家庭、校园、社区、城市生活或特殊人群需求。核心问题是：你想用 AI 帮谁？</p>
-          </article>
-          <article class="card">
-            <span class="label">作品表达</span>
-            <h3>让想法变得可见</h3>
-            <p>软件、硬件、影像、交互、社会创新方案都可以成为表达，只要它能清楚呈现问题与行动。</p>
-          </article>
-          <article class="card">
-            <span class="label">成长证据</span>
-            <h3>看见学习过程</h3>
-            <p>从发现问题、反复试错到现场讲述，创作过程本身也是值得被记录和传播的部分。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band alt" id="xhs">
-      <div class="inner">
-        <div class="feature">
-          <div class="feature-copy">
-            <p class="kicker">Xiaohongshu Collaboration</p>
-            <h3>小红书更适合作为作品馆、话题场和观察窗口</h3>
-            <p>本次传播合作建议以 WAIC 前后为第一站，通过统一话题、集中发布、作品故事与平台推荐机制，让青少年 AI 作品被更多人看见。</p>
-            <p>公开传播中应保持准确口径：小红书侧重点在话题与内容传播支持，具体资源安排以双方后续确认和正式公告为准。</p>
-          </div>
-          <div class="feature-visual" role="img" aria-label="青少年在展会现场展示 AI 项目的视觉图"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band dark">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Publishing Flow</p>
-            <h2>传播流程要从现场开始，而不是结束后补发</h2>
-          </div>
-          <p>把平台传播嵌入活动流程，可以让作品展示、现场体验和线上扩散互相支撑。</p>
-        </div>
-
-        <div class="steps" aria-label="传播流程">
-          <div class="step">
-            <b>01</b>
-            <span>确定统一话题与发布节奏</span>
-          </div>
-          <div class="step">
-            <b>02</b>
-            <span>提前筛选重点学生项目</span>
-          </div>
-          <div class="step">
-            <b>03</b>
-            <span>现场采集作品、人物与反馈</span>
-          </div>
-          <div class="step">
-            <b>04</b>
-            <span>组织学生、家长与伙伴集中发布</span>
-          </div>
-          <div class="step">
-            <b>05</b>
-            <span>整理笔记清单并触发平台支持</span>
-          </div>
-          <div class="step">
-            <b>06</b>
-            <span>复盘标题、封面、故事和传播反馈</span>
-          </div>
-        </div>
-
-        <div class="note">未成年人肖像、作品版权、家长授权和商业露出需要在发布前完成确认。所有公开内容以授权范围和正式活动口径为准。</div>
-      </div>
-    </section>
-
-    <section class="band" id="story">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Storylines</p>
-            <h2>适合对外讲述的 4 条内容主线</h2>
-          </div>
-          <p>让传播从“孩子会用 AI”走向“孩子如何观察世界、理解他人，并把技术变成行动”。</p>
-        </div>
-
-        <div class="grid two">
-          <article class="card">
-            <span class="label red-label">人物</span>
-            <h3>10 后 AI 创作者</h3>
-            <p>他们为什么开始做这个项目？最初看见了谁的困难？过程中遇到过哪些真实阻力？</p>
-          </article>
-          <article class="card">
-            <span class="label">作品</span>
-            <h3>AI for Real Needs</h3>
-            <p>把项目讲成一个可理解的行动：它解决什么问题，谁会用，下一步还能怎样改进。</p>
-          </article>
-          <article class="card">
-            <span class="label">现场</span>
-            <h3>作品摊位与 3 分钟 Demo</h3>
-            <p>通过短讲、互动、导师反馈和家长观察，让现场成为可被记录的成长证据。</p>
-          </article>
-          <article class="card">
-            <span class="label">沉淀</span>
-            <h3>线上特别展与故事卡</h3>
-            <p>活动之后继续沉淀作品馆、案例卡和复盘内容，为下一次青少年 AI 创新节积累资产。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band alt" id="release">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <p class="kicker">Release Notes</p>
-            <h2>发布前把授权和露出口径确认清楚</h2>
-          </div>
-          <p>青少年项目的传播要兼顾被看见和被保护。页面、笔记、视频与现场素材都应在授权范围内使用。</p>
-        </div>
-
-        <div class="list">
-          <div class="list-row">
-            <b>肖像授权</b>
-            <span>涉及学生正脸、姓名、学校、家庭信息和现场采访时，需按活动授权规则使用。</span>
-          </div>
-          <div class="list-row">
-            <b>作品版权</b>
-            <span>展示作品时保留创作者署名，二次传播、商业使用和素材复用需遵循授权范围。</span>
-          </div>
-          <div class="list-row">
-            <b>合作露出</b>
-            <span>活动名称、话题、品牌露出与平台资源安排以正式公告和双方确认信息为准。</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="next">
-      <div class="inner">
-        <div class="cta">
-          <div>
-            <p class="kicker">Next</p>
-            <h2>让更多人看见青少年正在怎样使用 AI</h2>
-            <p>活动信息、话题与重点项目将随 WAIC 前后进展更新。欢迎关注青少年 AI 创作者的作品、故事和现场表达。</p>
-          </div>
-          <div class="actions">
-            <button class="button primary" type="button" data-copy>复制链接</button>
-            <button class="button" type="button" onclick="window.print()">保存 PDF</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <span>WAIC 2026 超脑青少年 AI 特别展 · 公开分享页</span>
-      <span>页面内容以正式活动公告和双方确认信息为准</span>
-    </div>
-  </footer>
-
-  <script>
-    const copyButton = document.querySelector("[data-copy]");
-    if (copyButton) {
-      copyButton.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(window.location.href);
-          copyButton.textContent = "已复制";
-          setTimeout(() => {
-            copyButton.textContent = "复制链接";
-          }, 1400);
-        } catch {
-          copyButton.textContent = "复制失败";
-          setTimeout(() => {
-            copyButton.textContent = "复制链接";
-          }, 1400);
-        }
-      });
-    }
-  </script>
+  </div>
 </body>
 </html>

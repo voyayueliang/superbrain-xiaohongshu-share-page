@@ -1,22 +1,20 @@
-# WAIC 2026 超脑青少年 AI 特别展｜公开分享页
+# 超脑 × 小红书青少年 AI 活动｜微信分享页
 
-这是一个可直接发布的静态网页，用于公开分享「WAIC 2026 超脑青少年 AI 特别展」与小红书传播合作方向。
+这是一个可直接部署的静态网页项目，用于团队同步与微信分享。
 
 ## 文件结构
 
 ```txt
 .
 ├── index.html
-├── assets/
-│   └── youth-ai-showcase-hero.jpg
 └── README.md
 ```
 
 ## 本地预览
 
-直接双击 `index.html` 即可打开。
+直接双击 `index.html` 即可在浏览器中打开。
 
-也可以在当前文件夹启动本地预览：
+也可以用本地服务预览：
 
 ```bash
 python3 -m http.server 8000
@@ -28,23 +26,37 @@ python3 -m http.server 8000
 http://localhost:8000
 ```
 
-## 发布方式
+## 部署方式
 
-### Netlify
+### 方式一：Vercel
 
-直接把整个文件夹拖到 Netlify 的部署页面即可。
+1. 新建一个 GitHub 仓库
+2. 上传本项目文件
+3. 在 Vercel 中导入该仓库
+4. Framework Preset 选择 `Other`
+5. Deploy
 
-### Vercel
+### 方式二：Netlify
 
-把整个文件夹上传到 GitHub 仓库，在 Vercel 导入该仓库，Framework Preset 选择 `Other`。
+1. 打开 Netlify
+2. 直接拖拽整个文件夹或 zip 包
+3. 发布后获得可分享链接
 
-### GitHub Pages
+### 方式三：GitHub Pages
 
-把 `index.html`、`assets/` 和 `.nojekyll` 放在仓库根目录，在 Settings -> Pages 中选择 `main / root`。
+1. 新建 GitHub 仓库
+2. 上传 `index.html`
+3. 打开 Settings → Pages
+4. Source 选择 `Deploy from a branch`
+5. Branch 选择 `main / root`
+6. 保存后等待生成链接
 
-## 发布前检查
+## 适合发给 Codex 的任务说明
 
-- 入口文件是 `index.html`。
-- 页面不依赖 React、Vue 或外部 CDN。
-- 首屏图已放在 `assets/` 中，部署时不要漏掉。
-- 小红书合作口径保持为传播支持与内容共创方向，具体资源以双方确认和正式公告为准。
+请将这个静态页面部署为一个可公开访问的网页，并保证：
+
+- 入口文件为 `index.html`
+- 保留移动端适配
+- 不引入额外框架
+- 不改动正文内容
+- 可部署到 Vercel / Netlify / GitHub Pages 任一平台
